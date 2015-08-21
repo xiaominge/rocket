@@ -5,7 +5,11 @@
     "license": "MIT",
 
     "require": {
-        "madphp/src": "dev-master"
+        "php": ">=5.3.0"
+    },
+
+    "require-dev": {
+        "madphp/madphp": "dev-master"
     },
 
     "autoload": {
@@ -18,13 +22,5 @@
 
     "config": {
         "preferred-install": "dist"
-    },
-
-   "repositories": [
-        {
-            "type": "git",
-            "url": "https://github.com/xiaominge/madphp-src.git"
-        },
-        {"packagist": false}
-    ]
+    }
 }
