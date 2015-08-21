@@ -1,0 +1,30 @@
+{
+    "name": "rocket/rocket",
+    "description": "Rocket is a simple PHP framework based on composer.",
+    "keywords": ["framework", "rocket", "php"],
+    "license": "MIT",
+
+    "require": {
+        "madphp/src": "dev-master"
+    },
+
+    "autoload": {
+        "classmap": [
+            "app/libraries",
+            "app/controllers",
+            "models"
+        ]
+    },
+
+    "config": {
+        "preferred-install": "dist"
+    },
+
+   "repositories": [
+        {
+            "type": "git",
+            "url": "https://github.com/xiaominge/madphp-src.git"
+        },
+        {"packagist": false}
+    ]
+}
