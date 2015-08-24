@@ -19,13 +19,19 @@ return array(
 
     'aliases' => array(
         'Format' => '\Madphp\Src\Core\Support\Format',
-        'View' => '\Madphp\Src\Core\View',
-        'Route' => '\Madphp\Src\Core\Route',
-        'Event' => '\Madphp\Src\Core\Event',
-        'Config' => '\Madphp\Src\Core\Config',
-        'Log' => '\Madphp\Src\Core\Log',
 
         'DB' => '\Madphp\Src\Core\Db',
+        'Cache' => '\Madphp\Src\Core\Cache',
+        'View' => '\Madphp\Src\Core\View',
+        'Route' => '\Madphp\Src\Core\Route',
+        'Request' => '\Madphp\Src\Core\Request',
         'Response' => '\Madphp\Src\Core\Response',
+        'Cookie' => '\Madphp\Src\Core\Cookie',
+        'Input' => '\Madphp\Src\Core\Input',
+        'Output' => '\Madphp\Src\Core\Output',
+
+        'Config' => '\Madphp\Src\Core\Config',
+        'Event' => '\Madphp\Src\Core\Event',
+        'Log' => '\Madphp\Src\Core\Log',
     ),
 );

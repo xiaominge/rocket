@@ -20,17 +20,16 @@ class IndexController extends BaseController
         parent::__construct();
     }
 
-    public function index($page = 1)
+    public function index()
     {
         // $article = new Article();
+        $page = Input::get('p');
         $articles = Article::lists();
         $auths = Auth::lists();
         View::make('index')
             ->with('article', $articles[0])
             ->with('auths', $auths)
-            ->withSession(array('uid' => 1))
-            ->withTitle('title')
-            ->withHelloWorld('Hello World!')
+            ->with('page', $page)
             ->show();
     }
 }

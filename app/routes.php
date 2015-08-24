@@ -10,8 +10,6 @@ if (!defined('BASEPATH')) {
  */
 
 Route::get('/', 'IndexController@index');
-Route::get('/(:num)', 'IndexController@index');
-
 
 Route::error(function () {
     throw new Exception("404 Not Found");
