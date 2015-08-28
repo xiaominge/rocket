@@ -28,6 +28,7 @@ class IndexController extends BaseController
         $auths = Auth::lists();
         View::make('index')
             ->with('article', $articles[0])
+            ->with('title', $articles[0]->title)
             ->with('auths', $auths)
             ->with('page', $page)
             ->show();

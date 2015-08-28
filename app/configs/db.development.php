@@ -3,7 +3,7 @@
 $config['mysql']['charset'] = 'UTF8';
 $config['mysql']['persistent'] = TRUE;
 $config['mysql']['collation'] = 'utf8_unicode_ci';
-$config['mysql']['timeout'] = 3;
+$config['mysql']['timeout'] = 3000;
 
 
 $config['database']['blog']['username'] = 'root';
