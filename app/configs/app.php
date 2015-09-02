@@ -18,20 +18,22 @@ return array(
     'charset' => 'UTF-8',
 
     'aliases' => array(
-        'Format' => '\Madphp\Src\Core\Support\Format',
+        'Format' => '\Madphp\Core\Support\Format',
 
-        'DB' => '\Madphp\Src\Core\Db',
-        'Cache' => '\Madphp\Src\Core\Cache',
-        'View' => '\Madphp\Src\Core\View',
-        'Route' => '\Madphp\Src\Core\Route',
-        'Request' => '\Madphp\Src\Core\Request',
-        'Response' => '\Madphp\Src\Core\Response',
-        'Cookie' => '\Madphp\Src\Core\Cookie',
-        'Input' => '\Madphp\Src\Core\Input',
-        'Output' => '\Madphp\Src\Core\Output',
+        'DB' => '\Madphp\Core\Db',
+        'Cache' => '\Madphp\Core\Cache',
+        'View' => '\Madphp\Core\View',
+        'Route' => '\Madphp\Core\Route',
+        'Request' => '\Madphp\Core\Request',
+        'Response' => '\Madphp\Core\Response',
+        'Cookie' => '\Madphp\Core\Cookie',
+        'Input' => '\Madphp\Core\Input',
+        'Output' => '\Madphp\Core\Output',
 
-        'Config' => '\Madphp\Src\Core\Config',
-        'Event' => '\Madphp\Src\Core\Event',
-        'Log' => '\Madphp\Src\Core\Log',
+        'Config' => '\Madphp\Core\Config',
+        'Event' => '\Madphp\Core\Event',
+        'Log' => '\Madphp\Core\Log',
+
+        'Html' => '\Madphp\Core\Html',
     ),
 );

@@ -19,9 +19,9 @@ foreach ($aliases as $class => $full_class) {
 }
 Config::get('constants');
 // 初始化请求
-\Madphp\Src\Core\Http\Request::init();
+Request::init();
 // 初始化输出
-\Response::init();
+Response::init();
 // BASE_URL
 define('BASE_URL', $config['app']['base_url']);
 // TIME_ZONE

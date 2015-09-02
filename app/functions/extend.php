@@ -88,7 +88,7 @@ function img()
     $configKey = 'extend.imgAliases';
 
     $args = array_merge(array($configKey), func_get_args());
-    return call_user_func_array('\Madphp\Src\Core\Html::img', $args);
+    return call_user_func_array('Html::img', $args);
 }
 
 /**
@@ -101,7 +101,7 @@ function style()
     $configKey = 'extend.cssAliases';
 
     $args = array_merge(array($configKey), func_get_args());
-    return call_user_func_array('\Madphp\Src\Core\Html::css', $args);
+    return call_user_func_array('Html::css', $args);
 }
 
 /**
@@ -114,5 +114,5 @@ function script()
     $configKey = 'extend.jsAliases';
 
     $args = array_merge(array($configKey), func_get_args());
-    return call_user_func_array('\Madphp\Src\Core\Html::js', $args);
+    return call_user_func_array('Html::js', $args);
 }

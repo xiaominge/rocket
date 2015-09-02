@@ -1,3 +1,3 @@
 <div class="content">
-{{ $article->content }}
+    {{ $article->content }}
 </div>
