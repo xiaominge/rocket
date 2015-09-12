@@ -18,22 +18,22 @@ return array(
     'charset' => 'UTF-8',
 
     'aliases' => array(
-        'Format' => '\Madphp\Core\Support\Format',
+        'Format' => '\Madphp\Support\Format',
 
-        'DB' => '\Madphp\Core\Db',
-        'Cache' => '\Madphp\Core\Cache',
-        'View' => '\Madphp\Core\View',
-        'Route' => '\Madphp\Core\Route',
-        'Request' => '\Madphp\Core\Request',
-        'Response' => '\Madphp\Core\Response',
-        'Cookie' => '\Madphp\Core\Cookie',
-        'Input' => '\Madphp\Core\Input',
-        'Output' => '\Madphp\Core\Output',
+        'DB' => '\Madphp\Db',
+        'Cache' => '\Madphp\Cache',
+        'View' => '\Madphp\View',
+        'Route' => '\Madphp\Route',
+        'Request' => '\Madphp\Request',
+        'Response' => '\Madphp\Response',
+        'Cookie' => '\Madphp\Cookie',
+        'Input' => '\Madphp\Input',
+        'Output' => '\Madphp\Output',
 
-        'Config' => '\Madphp\Core\Config',
-        'Event' => '\Madphp\Core\Event',
-        'Log' => '\Madphp\Core\Log',
+        'Config' => '\Madphp\Config',
+        'Event' => '\Madphp\Event',
+        'Log' => '\Madphp\Log',
 
-        'Html' => '\Madphp\Core\Html',
+        'Html' => '\Madphp\Html',
     ),
 );

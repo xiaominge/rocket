@@ -11,7 +11,7 @@ if (!defined('BASEPATH')) {
 
 $config = [];
 
-$config['app'] = import('configs.app', APP_PATH);
+$config['app'] = import(CONFIG_FOLDER.'.app', APP_PATH);
 
 $aliases = $config['app']['aliases'];
 foreach ($aliases as $class => $full_class) {

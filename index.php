@@ -5,19 +5,19 @@
  * @author 徐亚坤 hdyakun@sina.com
  */
 
-define('ENVIRONMENT', 'development');
+define('ENVIRONMENT', getenv('ENVIRONMENT') ?: 'development');
 
 if (defined('ENVIRONMENT')) {
     switch (ENVIRONMENT) {
         case 'development':
             error_reporting(E_ALL);
-        break;
-    
+            break;
+
         case 'testing':
 
         case 'production':
             error_reporting(0);
-        break;
+            break;
 
         default:
             exit('The application environment is not set correctly.');
@@ -26,52 +26,41 @@ if (defined('ENVIRONMENT')) {
 
 // 目录间隔符
 define("DS", DIRECTORY_SEPARATOR);
-
 // 根目录
-define('BASEPATH', __DIR__);
+define('BASEPATH', __DIR__ . DS);
 
-$application_folder = 'app';
-$application_view_folder = 'views';
-$application_layout_folder = 'layouts';
-$application_config_folder = 'configs';
-$application_log_folder = 'logs';
-$application_cache_folder = 'caches';
-
-define('APP_FOLDER', $application_folder);
-define('VIEW_FOLDER', $application_view_folder);
-define('LAYOUT_FOLDER', $application_layout_folder);
-define('CONFIG_FOLDER', $application_config_folder);
-define('LOG_FOLDER', $application_log_folder);
-define('CACHE_FOLDER', $application_cache_folder);
+define('APP_FOLDER', 'app');
+define('VIEW_FOLDER', 'views');
+define('LAYOUT_FOLDER', 'layouts');
+define('CONFIG_FOLDER', 'configs');
+define('LOG_FOLDER', 'logs');
+define('CACHE_FOLDER', 'caches');
 
 // 应用目录
-define('APP_PATH', BASEPATH.DS.$application_folder);
+define('APP_PATH', BASEPATH . APP_FOLDER . DS);
 // 应用视图目录
-define('VIEW_PATH', APP_PATH.DS.$application_view_folder.DS);
+define('VIEW_PATH', APP_PATH . VIEW_FOLDER . DS);
+// Layout目录
+define('LAYOUT_PATH', VIEW_PATH . LAYOUT_FOLDER . DS);
 // 应用配置目录
-define('CONFIG_PATH', APP_PATH.DS.$application_config_folder.DS);
+define('CONFIG_PATH', APP_PATH . CONFIG_FOLDER . DS);
 // 应用日志目录
-define('LOG_PATH', APP_PATH.DS.$application_log_folder.DS);
+define('LOG_PATH', APP_PATH . LOG_FOLDER . DS);
 // 应用缓存目录
-define('CACHE_PATH', APP_PATH.DS.$application_cache_folder.DS);
+define('CACHE_PATH', APP_PATH . CACHE_FOLDER . DS);
 
 // 加载文件函数
 function import($filepath, $base = null, $key = null)
 {
     static $paths;
-    $keypath = $key ? $key.$filepath : $filepath;
+    $keypath = $key ? $key . $filepath : $filepath;
 
-    if (!isset($paths[$keypath])) {
-        if (is_null($base)) {
-            $base = BASEPATH.'/';
-        } else {
-            $base = rtrim($base, '/').'/';
-        }
-        $parts = explode('.', $filepath);
-        array_pop($parts);
+    if (!isset($paths[$keypath]) or empty($paths[$keypath])) {
+        $base = is_null($base) ? BASEPATH : rtrim($base, '/') . DS;
         $path = str_replace('.', DS, $filepath);
-        $paths[$keypath] = include $base.$path.'.php';
+        $paths[$keypath] = include $base . $path . '.php';
     }
+
     return $paths[$keypath];
 }
 
