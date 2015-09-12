@@ -35,19 +35,22 @@ define('LAYOUT_FOLDER', 'layouts');
 define('CONFIG_FOLDER', 'configs');
 define('LOG_FOLDER', 'logs');
 define('CACHE_FOLDER', 'caches');
+define('STORAGE_FOLDER', 'storages');
 
 // 应用目录
 define('APP_PATH', BASEPATH . APP_FOLDER . DS);
 // 应用视图目录
 define('VIEW_PATH', APP_PATH . VIEW_FOLDER . DS);
 // Layout目录
-define('LAYOUT_PATH', VIEW_PATH . LAYOUT_FOLDER . DS);
+define('LAYOUT_PATH', APP_PATH . LAYOUT_FOLDER . DS);
 // 应用配置目录
 define('CONFIG_PATH', APP_PATH . CONFIG_FOLDER . DS);
+// 应用存储目录
+define('STORAGE_PATH', APP_PATH . STORAGE_FOLDER . DS);
 // 应用日志目录
-define('LOG_PATH', APP_PATH . LOG_FOLDER . DS);
+define('LOG_PATH', STORAGE_PATH . LOG_FOLDER . DS);
 // 应用缓存目录
-define('CACHE_PATH', APP_PATH . CACHE_FOLDER . DS);
+define('CACHE_PATH', STORAGE_PATH . CACHE_FOLDER . DS);
 
 // 加载文件函数
 function import($filepath, $base = null, $key = null)
