@@ -9,14 +9,16 @@
     },
 
     "require-dev": {
-        "madphp/madphp": "dev-master"
+        "madphp/madphp": "dev-master",
+        "madphp/dao": "dev-master"
     },
 
     "autoload": {
         "classmap": [
             "app/libraries",
             "app/controllers",
-            "models"
+            "app/actions",
+            "app/models"
         ],
         "files": [
             "app/functions/extend.php"

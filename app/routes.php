@@ -9,7 +9,8 @@ if (!defined('BASEPATH')) {
  * @author 徐亚坤 hdyakun@sina.com
  */
 
-Route::get('/', 'IndexController@index');
+Route::get('/', 'admin/index@index');
+Route::get('/test', 'admin/index@test');
 
 Route::error(function () {
     throw new Exception("404 Not Found");

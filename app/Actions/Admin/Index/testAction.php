@@ -1,34 +1,33 @@
 <?php
-
-use \Models\Blog\Article;
-use \Models\Rbac\Auth;
+/**
+ * Created by PhpStorm.
+ * User: xuyakun
+ * Date: 16/3/18
+ * Time: 下午10:50
+ */
 
 if (!defined('BASEPATH')) {
     exit('No direct script access allowed');
 }
 
-/**
- * 首页控制器
- * @author 徐亚坤 hdyakun@sina.com
- */
-
-class IndexController extends BaseController
+class AdminIndexTestAction extends AdminIndexController
 {
+
     public function __construct()
     {
-        $this->model = 'article';
         parent::__construct();
+        $this->model = 'article';
     }
 
-    public function index()
+    public function call()
     {
         // $article = new Article();
         $page = Input::get('p');
-        $articles = Article::lists();
-        $auths = Auth::lists();
+        $articles = ArticleModel::lists();
+        $auths = AuthModel::lists();
         View::make('index')
             ->with('article', $articles[0])
-            ->with('title', $articles[0]->title)
+            ->with('title', $articles[0]->title . 'test')
             ->with('auths', $auths)
             ->with('page', $page)
             ->show();
