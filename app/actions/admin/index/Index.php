@@ -1,10 +1,17 @@
 <?php
 
+namespace app\action\admin\index;
+use app\controller\admin\IndexController;
+use app\model\Article as ArticleModel;
+use app\model\Auth as AuthModel;
+use Input;
+use View;
+
 if (!defined('BASEPATH')) {
     exit('No direct script access allowed');
 }
 
-class AdminIndexIndexAction extends AdminIndexController
+class IndexAction extends IndexController
 {
 
     public function __construct()
@@ -13,9 +20,8 @@ class AdminIndexIndexAction extends AdminIndexController
         $this->model = 'article';
     }
 
-    public function call()
+    public function exec()
     {
-        // $article = new Article();
         $page = Input::get('p');
         $articles = ArticleModel::lists();
         $auths = AuthModel::lists();
@@ -25,5 +31,8 @@ class AdminIndexIndexAction extends AdminIndexController
             ->with('auths', $auths)
             ->with('page', $page)
             ->show();
+        echo microtime(true) - START_TIME;
+        echo "<br>";
+        echo memory_get_usage() - START_USAGE_MEMORY;exit();
     }
 }

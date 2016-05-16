@@ -1,17 +1,19 @@
 <?php
 
+namespace app\model;
+
 if (!defined('BASEPATH')) {
     exit('No direct script access allowed');
 }
 
-use \MadphpDao\Rbac\Auth;
+use \MadphpDao\Rbac\Auth as AuthDao;
 
 /**
  * 模型类
  * @author 徐亚坤 hdyakun@sina.com
  */
 
-class AuthModel
+class Auth
 {
     public function __construct()
     {
@@ -20,7 +22,7 @@ class AuthModel
 
     public static function lists()
     {
-        return Auth::getAll();
+        return AuthDao::getAll();
     }
 
 }

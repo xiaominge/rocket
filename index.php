@@ -5,6 +5,10 @@
  * @author 徐亚坤 hdyakun@sina.com
  */
 
+error_reporting(E_ALL);
+
+define('START_TIME', microtime(true));
+define('START_USAGE_MEMORY', memory_get_usage());
 define('ENVIRONMENT', getenv('ENVIRONMENT') ?: 'development');
 
 if (defined('ENVIRONMENT')) {
@@ -61,7 +65,7 @@ function import($filepath, $base = null, $key = null)
     if (!isset($paths[$keypath]) or empty($paths[$keypath])) {
         $base = is_null($base) ? BASEPATH : rtrim($base, '/') . DS;
         $path = str_replace('.', DS, $filepath);
-        $paths[$keypath] = include $base . $path . '.php';
+        $paths[$keypath] = include_once $base . $path . '.php';
     }
 
     return $paths[$keypath];

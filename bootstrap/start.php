@@ -10,18 +10,17 @@ if (!defined('BASEPATH')) {
  */
 
 $config = [];
-
-$config['app'] = import(CONFIG_FOLDER.'.app', APP_PATH);
-
+$config['app'] = import(CONFIG_FOLDER . '.app', APP_PATH);
 $aliases = $config['app']['aliases'];
 foreach ($aliases as $class => $full_class) {
     class_alias($full_class, $class);
 }
-Config::get('constants');
+
+Madphp\Config::get('constants');
 // 初始化请求
-Request::init();
+Madphp\Request::init();
 // 初始化输出
-Response::init();
+Madphp\Response::init();
 // BASE_URL
 define('BASE_URL', $config['app']['base_url']);
 // TIME_ZONE

@@ -9,11 +9,11 @@ if (!defined('BASEPATH')) {
  * @author 徐亚坤 hdyakun@sina.com
  */
 
-Route::get('/', 'admin/index@index');
-Route::get('/test', 'admin/index@test');
+Madphp\Route::get('/', 'admin/index@index');
+Madphp\Route::get('/test', 'admin/index@test');
 
-Route::error(function () {
-    throw new Exception("404 Not Found");
+Madphp\Route::error(function () {
+    throw new \Exception("404 Not Found");
 });
 
-Route::dispatch();
+Madphp\Route::dispatch();

@@ -1,17 +1,19 @@
 <?php
 
+namespace app\model;
+
 if (!defined('BASEPATH')) {
     exit('No direct script access allowed');
 }
 
-use \MadphpDao\Blog\Article;
+use \MadphpDao\Blog\Article as ArticleDao;
 
 /**
  * 模型类
  * @author 徐亚坤 hdyakun@sina.com
  */
 
-class ArticleModel
+class Article
 {
     public function __construct()
     {
@@ -20,7 +22,7 @@ class ArticleModel
 
     public static function lists()
     {
-        return Article::getAll();
+        return ArticleDao::getAll();
     }
 
 }
