@@ -5,8 +5,6 @@
  * @author 徐亚坤 hdyakun@sina.com
  */
 
-error_reporting(E_ALL);
-
 define('START_TIME', microtime(true));
 define('START_USAGE_MEMORY', memory_get_usage());
 define('ENVIRONMENT', getenv('ENVIRONMENT') ?: 'development');
@@ -18,7 +16,6 @@ if (defined('ENVIRONMENT')) {
             break;
 
         case 'testing':
-
         case 'production':
             error_reporting(0);
             break;

@@ -5,12 +5,18 @@
  * Date: 16/3/18
  * Time: 下午10:50
  */
+namespace app\action\admin\index;
+use app\controller\admin\IndexController;
+use app\model\Article as ArticleModel;
+use app\model\Auth as AuthModel;
+use Input;
+use View;
 
 if (!defined('BASEPATH')) {
     exit('No direct script access allowed');
 }
 
-class AdminIndexTestAction extends AdminIndexController
+class TestAction extends IndexController
 {
 
     public function __construct()
@@ -19,9 +25,8 @@ class AdminIndexTestAction extends AdminIndexController
         $this->model = 'article';
     }
 
-    public function call()
+    public function exec()
     {
-        // $article = new Article();
         $page = Input::get('p');
         $articles = ArticleModel::lists();
         $auths = AuthModel::lists();
