@@ -13,8 +13,9 @@ use \MadphpDao\Rbac\Auth as AuthDao;
  * @author 徐亚坤 hdyakun@sina.com
  */
 
-class Auth
+class Auth extends Base
 {
+
     public function __construct()
     {
 
@@ -22,7 +23,7 @@ class Auth
 
     public static function lists()
     {
-        return AuthDao::getAll();
+        return AuthDao::Dao()->getAll();
     }
 
 }
