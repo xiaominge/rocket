@@ -11,6 +11,7 @@ if (!defined('BASEPATH')) {
 
 Madphp\Route::get('/', 'admin/index@index');
 Madphp\Route::get('/test', 'admin/index@test');
+Madphp\Route::get('/base', 'base@index');
 
 Madphp\Route::error(function () {
     throw new \Exception("404 Not Found");

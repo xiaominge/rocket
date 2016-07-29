@@ -12,12 +12,14 @@ if (!defined('BASEPATH')) {
  */
 class BaseController
 {
-    public $actionExecuteMethod;
 
     public function __construct()
     {
-        $this->actionExecuteMethod = 'exec';
-        $config = import('app.configs.app');
-        header("content-type:text/html; charset=" . $config['charset']);
+
+    }
+
+    public function indexAction()
+    {
+        echo "BaseController/indexAction called.";
     }
 }
